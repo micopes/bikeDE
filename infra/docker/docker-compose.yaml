@@ -20,9 +20,15 @@ x-airflow-common:
     AIRFLOW__API__AUTH_BACKENDS: 'airflow.api.auth.backend.basic_auth'
     _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
   volumes:
+<<<<<<< HEAD
     - ../../python/dags:/opt/airflow/dags
     - ../../python/logs:/opt/airflow/logs
     - ../../python/plugins:/opt/airflow/plugins
+=======
+    - /home/ubuntu/bikeDE/python/dags:/home/ubuntu/airflow/dags
+    - /home/ubuntu/bikeDE/python/logs:/home/ubuntu/airflow/logs
+    - /home/ubuntu/bikeDE/python/plugins:/home/ubuntu/airflow/plugins
+>>>>>>> f6002f1 (set ubuntu(ec2) docker)
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on
@@ -197,7 +203,7 @@ services:
       _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}
     user: "0:0"
     volumes:
-      - .:/sources
+      - ./sources
 
   airflow-cli:
     <<: *airflow-common

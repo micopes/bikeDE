@@ -5,7 +5,7 @@ LABEL maintainer="Kang"
 # Arguments that can be set with docker build
 ARG AIRFLOW_VERSION=2.3.0
 # TODO: 재설정 필요.
-ARG AIRFLOW_HOME=
+ARG AIRFLOW_HOME='/home/ubuntu/airflow
 
 # Export the environment variable AIRFLOW_HOME where airflow will be installed
 ENV AIRFLOW_HOME=${AIRFLOW_HOME}
